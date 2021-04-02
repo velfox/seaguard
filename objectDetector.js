@@ -38,17 +38,20 @@ function gotResult(err, results) {
     if(results[i].label == "person"){
       noStroke();
       fill(0, 255, 0);
-      text(
-        `${results[i].label} ${nfc(results[i].confidence * 100.0, 2)}%`,
-        results[i].x + 5,
-        results[i].y + 15,
-      );
-      noFill();
-      // globalAlpha(0.8);
-      // fill(255, 0, 0);
-      strokeWeight(2);
-      stroke(255, 0, 0);
+      // text(
+      //   `${results[i].label} ${nfc(results[i].confidence * 100.0, 2)}%`,
+      //   results[i].x + 5,
+      //   results[i].y + 15,
+      // );
+
+      opacity = 150*results[i].confidence
+      console.log(results[i].confidence*100)
+      fill(255, 0, 0,opacity);
+      // strokeWeight(2);
+      // console.log(color);
+      // stroke(255, 0, 0);
       rect(results[i].x, results[i].y, results[i].width, results[i].height);
+      // globalAlpha = 0.2;
     }
   }
 }
