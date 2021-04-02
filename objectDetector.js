@@ -62,8 +62,8 @@ function getImageWidth(fileName){
 
   var imageSize = {}
   img.onload = function() {
-    imageSize['width'] = this.width * 2
-    imageSize['height'] = this.height *2
+    imageSize['width'] = this.width
+    imageSize['height'] = this.height
   }
   img.src = fileName;
 
