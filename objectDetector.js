@@ -15,6 +15,7 @@ let img;
 var fileName = "images/sea_swimmers.jpg"
 
 fileSize = getImageWidth(fileName)
+
 function preload() {
   img = loadImage(fileName);
   // Models available are 'cocossd', 'yolo'
@@ -61,8 +62,8 @@ function getImageWidth(fileName){
 
   var imageSize = {}
   img.onload = function() {
-    imageSize['width'] = this.width
-    imageSize['height'] = this.height
+    imageSize['width'] = this.width * 2
+    imageSize['height'] = this.height *2
   }
   img.src = fileName;
 
