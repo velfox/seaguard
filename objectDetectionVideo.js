@@ -14,9 +14,9 @@ let detector;
 let detections = [];
 
 function setup() {
-  createCanvas(640, 480);
+  createCanvas(1024, 768);
   video = createCapture(VIDEO, videoReady);
-  video.size(640, 480);
+  video.size(1024, 768);
   video.hide();
 }
 
@@ -41,14 +41,18 @@ function draw() {
   image(video, 0, 0);
 
   for (let i = 0; i < detections.length; i += 1) {
-    const object = detections[i];
-    stroke(0, 255, 0);
-    strokeWeight(4);
-    noFill();
-    rect(object.x, object.y, object.width, object.height);
-    noStroke();
-    fill(255);
-    textSize(24);
-    text(object.label, object.x + 10, object.y + 24);
+    console.log(detections[i])
+    if((detections[i].label == "person")&&(detections[i].height <= 400)){
+
+      noStroke();
+      fill(0, 255, 0);
+
+      opacity = 150*detections[i].confidence
+      console.log(detections[i].confidence*100)
+      fill(255, 0, 0,opacity);
+
+      rect(detections[i].x, detections[i].y, detections[i].width, detections[i].height);
+
+    }
   }
 }
