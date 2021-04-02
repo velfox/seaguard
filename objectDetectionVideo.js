@@ -56,7 +56,7 @@ function draw() {
       console.log(detections[i].confidence*100)
       fill(255, 0, 0,opacity);
 
-      rect(detections[i].x, detections[i].y, detections[i].width, detections[i].height);
+      rect(detections[i].x - (detections[i].width*0.25) , detections[i].y - (detections[i].height*0.25), detections[i].width * 1.5, detections[i].height * 1.5);
 
     // }
   }
