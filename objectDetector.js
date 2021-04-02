@@ -18,7 +18,7 @@ fileSize = getImageWidth(fileName)
 function preload() {
   img = loadImage(fileName);
   // Models available are 'cocossd', 'yolo'
-  objectDetector = ml5.objectDetector('yolo');
+  objectDetector = ml5.objectDetector('cocossd');
 }
 
 function setup() {
@@ -35,18 +35,21 @@ function gotResult(err, results) {
 
   for (let i = 0; i < results.length; i += 1) {
     console.log(results[i])
-
-    noStroke();
-    fill(0, 255, 0);
-    text(
-      `${results[i].label} ${nfc(results[i].confidence * 100.0, 2)}%`,
-      results[i].x + 5,
-      results[i].y + 15,
-    );
-    noFill();
-    strokeWeight(4);
-    stroke(0, 255, 0);
-    rect(results[i].x, results[i].y, results[i].width, results[i].height);
+    if(results[i].label == "person"){
+      noStroke();
+      fill(0, 255, 0);
+      text(
+        `${results[i].label} ${nfc(results[i].confidence * 100.0, 2)}%`,
+        results[i].x + 5,
+        results[i].y + 15,
+      );
+      noFill();
+      // globalAlpha(0.8);
+      // fill(255, 0, 0);
+      strokeWeight(2);
+      stroke(255, 0, 0);
+      rect(results[i].x, results[i].y, results[i].width, results[i].height);
+    }
   }
 }
 
