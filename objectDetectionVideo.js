@@ -13,14 +13,19 @@ let video;
 let detector;
 let detections = [];
 
+let fileName = "images/Surfing_Scheveningen.mp4"
+
 function setup() {
   createCanvas(1024, 768);
-  video = createCapture(VIDEO, videoReady);
+  video = createVideo(fileName, videoReady);
   video.size(1024, 768);
   video.hide();
 }
 
 function videoReady() {
+
+  video.loop();
+  video.volume(0);
   // Models available are 'cocossd', 'yolo'
   detector = ml5.objectDetector('cocossd', modelReady);
 }
@@ -42,7 +47,7 @@ function draw() {
 
   for (let i = 0; i < detections.length; i += 1) {
     console.log(detections[i])
-    if((detections[i].label == "person")&&(detections[i].height <= 400)){
+    // if((detections[i].label == "person")&&(detections[i].height <= 400)){
 
       noStroke();
       fill(0, 255, 0);
@@ -53,6 +58,6 @@ function draw() {
 
       rect(detections[i].x, detections[i].y, detections[i].width, detections[i].height);
 
-    }
+    // }
   }
 }
