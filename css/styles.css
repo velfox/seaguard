@@ -1,0 +1,40 @@
+body{
+  background-color:#2C2C2E;
+  margin:20px;
+  padding:10px 20px;
+  border:2px solid black;
+  border-radius:2px;
+  width:1280px;
+}
+
+.dashboard-title,.breadcrumb{
+  width:400px;
+  margin:0px;
+}
+
+h1.dashboard-title{
+  font-family:"D-DIN";
+  color:white;
+  margin-top:0px;
+  font-size:45px;
+  margin-bottom:20px
+}
+
+p.breadcrumb{
+  font-family:"Montserrat Medium";
+  color:#EBEBF5;
+  opacity:60%;
+  font-size:14px;
+}
+
+.purple{
+  color:#5E5CE6;
+}
+
+.extra-space{
+  margin:0px 5px;
+}
+
+canvas#defaultCanvas0{
+  border-radius:10px;
+}
