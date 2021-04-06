@@ -9,11 +9,11 @@ let fileName = "images/Surfing_Scheveningen.mp4"
 function setup() {
 
   // Create canvas
-  createCanvas(1024, 768);
+  createCanvas(1280, 720);
 
   // Add video
   video = createVideo(fileName, videoReady);
-  video.size(1024, 768);
+  video.size(1280, 720);
 
   // Hide the video and show only the canvas
   video.hide();
