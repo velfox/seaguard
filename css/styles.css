@@ -35,6 +35,13 @@ p.breadcrumb{
   margin:0px 5px;
 }
 
+#loading{
+  display:block;
+  color:white;
+  font-family:"D-DIN";
+}
+
 canvas#defaultCanvas0{
   border-radius:10px;
+  display:none;
 }

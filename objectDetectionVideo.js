@@ -48,6 +48,9 @@ function gotDetections(error, results) {
 
 function modelReady() {
   detector.detect(video, gotDetections);
+  console.log("ready")
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("defaultCanvas0").style.display = "block";
 }
 
 // draw the rectangles
